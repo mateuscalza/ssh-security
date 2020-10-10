@@ -21,7 +21,7 @@ ssh user@host
 
 ```bash
 sudo apt install -y openssh-client # caso não tenha instalado
-ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519 -C "john@example.com"
+ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519 -C "fulano@example.com"
 ```
 
 ## Teste de Brute Force Attack
@@ -39,3 +39,8 @@ ssh-brute-force user@host
  - Mudar a porta padrão
  - Permitir apenas IPs específicos no arquivo: `nano /etc/ssh/sshd_config`
  - Manter apenas usuários SSH necessários: `cat /etc/shadow | grep '^[^:]*:[^\*!]'`
+
+## Observações
+
+ - Estes exemplos foram aplicados usando Ubuntu 20.04, ainda que este deve funcionar em outras distribuições Linux, exceto a instação de pacotes
+ - A ferramenta de testes de brute force attack é compatível com Windows, Linux e MacOS, desde que tenham NodeJS instalado
