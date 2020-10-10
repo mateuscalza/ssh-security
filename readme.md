@@ -17,11 +17,20 @@ ssh user@host
 
 ## Configurando acesso seguro sem senha
 
-É possível fazer o acesso usando chaves assimétricas. Neste caso o primeiro passo é gerar um par seguro de chaves:
+É possível fazer o acesso usando chaves assimétricas.
+
+Para este procedimento, garanta que há o `ssh-keygen` esteja disponível no seu terminal, em distribuições baseadas no Ubuntu/Debian pode ser instalado com `sudo apt install -y openssh-client`. Em versões mais recentes do Windows já está disponível no terminal.
+
+O primeiro passo é gerar um par seguro de chaves na sua máquina pessoal, caso ainda não tenha:
 
 ```bash
-sudo apt install -y openssh-client # caso não tenha instalado
 ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519 -C "fulano@example.com"
+```
+
+Então você deve copiar sua chave pública, se você já possuia uma chave do tipo RSA use o comando `cat ~/.ssh/id_rsa.pub`, se você gerou no passo anterior, apresente sua chave com:
+
+```bash
+cat ~/.ssh/id_rsa.pub
 ```
 
 ## Teste de Brute Force Attack
@@ -42,5 +51,5 @@ ssh-brute-force user@host
 
 ## Observações
 
- - Estes exemplos foram aplicados usando Ubuntu 20.04, ainda que este deve funcionar em outras distribuições Linux, exceto a instação de pacotes
+ - Estes exemplos foram aplicados usando Ubuntu 20.04, ainda que estes devam funcionar em outras distribuições Linux
  - A ferramenta de testes de brute force attack é compatível com Windows, Linux e MacOS, desde que tenham NodeJS instalado
