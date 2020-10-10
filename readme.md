@@ -9,6 +9,12 @@ Desenvolvido pelos acadêmicos:
  - Bruno Cesca
  - Mateus Calza
 
+## Acessando servidores SSH
+
+```bash
+ssh user@host
+```
+
 ## Teste de Brute Force Attack com SSH
 
 ```bash
