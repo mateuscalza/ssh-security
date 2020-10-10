@@ -18,6 +18,6 @@ ssh user@host
 ## Teste de Brute Force Attack com SSH
 
 ```bash
-npm install
-npm start user@host
+npm install -g mateuscalza/ssh-security
+ssh-brute-force user@host
 ```
