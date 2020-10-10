@@ -1,5 +1,5 @@
 {
-  "name": "ssh-brute-force-test",
+  "name": "ssh-brute-force",
   "version": "0.0.1",
   "description": "Brute force test SSH server",
   "main": "index.js",
@@ -8,14 +8,16 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js --"
+    "start": "node cli.js",
+    "dev": "nodemon cli.js --"
+  },
+  "bin": {
+    "ssh-brute-force": "./cli.js"
   },
   "dependencies": {
     "humanize-duration": "^3.24.0",
     "minimist": "^1.2.5",
     "n-readlines": "^1.0.0",
-    "queue": "^6.0.1",
     "ssh2": "^0.8.9"
   },
   "devDependencies": {

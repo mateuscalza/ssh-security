@@ -6,10 +6,10 @@ async function sshBruteForce({
   host = '127.0.0.1',
   username = 'root',
   port = 22,
-  onFailure = () => undefined,
-  filter = () => true,
-  errorRetryDelay = 1000,
   verbose = false,
+  onFailure = () => undefined,
+  errorRetryDelay = 1000,
+  filter = () => true,
 }) {
   const operation = async password => {
     try {

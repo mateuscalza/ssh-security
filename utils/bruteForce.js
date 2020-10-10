@@ -5,7 +5,7 @@ async function bruteForce({ operation, filter = () => true, onFailure }) {
 
   let index = 0
   while ((line = liner.next())) {
-    const password = line.toString()
+    const password = line.toString().trim()
     if (!filter(password, index)) {
       index++
       continue
