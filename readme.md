@@ -8,3 +8,10 @@ Desenvolvido pelos acadêmicos:
  - Aline Gemelli
  - Bruno Cesca
  - Mateus Calza
+
+## Teste de Brute Force Attack com SSH
+
+```bash
+npm install
+npm start user@host
+```
