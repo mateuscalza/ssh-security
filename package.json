@@ -9,7 +9,7 @@
   "private": false,
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js --"
   },
   "dependencies": {
     "humanize-duration": "^3.24.0",
