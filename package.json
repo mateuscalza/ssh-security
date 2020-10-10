@@ -1,0 +1,24 @@
+{
+  "name": "ssh-brute-force-test",
+  "version": "0.0.1",
+  "description": "Brute force test SSH server",
+  "main": "index.js",
+  "repository": "git@github.com:mateuscalza/ssh-security.git",
+  "author": "Mateus Calza <mateushenrique17@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "humanize-duration": "^3.24.0",
+    "minimist": "^1.2.5",
+    "queue": "^6.0.1",
+    "ssh2": "^0.8.9"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4",
+    "prettier": "^2.1.2"
+  }
+}
