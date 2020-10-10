@@ -3,7 +3,7 @@ const humanizeDuration = require('humanize-duration')
 const sshBruteForce = require('./utils/sshBruteForce')
 const verticalScaling = require('./utils/verticalScaling')
 
-const start = Date.now()
+const startTime = Date.now()
 const host = options.host || '127.0.0.1'
 const port = options.port || 22
 const username = options.username || 'root'
@@ -12,6 +12,7 @@ const forks = options.forks
 
 verticalScaling({
   verbose,
+  forks,
   onFork: async ({ index, forks, filter }) => {
     try {
       const password = await sshBruteForce({
@@ -27,8 +28,10 @@ verticalScaling({
       })
       process.stdout.write('\n')
 
+      console.log(`Elapsed time: ${humanizeDuration(Date.now() - startTime)}`)
+
       if (password !== null) {
-        console.log(password)
+        console.log(`Password is "${password}"`)
       } else {
         throw new Error('Password not found!')
       }
