@@ -17,7 +17,12 @@ ssh user@host
 
 ## Configurando acesso seguro sem senha
 
-É possível fazer o acesso usando chaves assimétricas. Neste caso o primeiro 
+É possível fazer o acesso usando chaves assimétricas. Neste caso o primeiro passo é gerar um par seguro de chaves:
+
+```bash
+sudo apt install -y openssh-client # caso não tenha instalado
+ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519 -C "john@example.com"
+```
 
 ## Teste de Brute Force Attack
 
