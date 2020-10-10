@@ -21,7 +21,7 @@ ssh user@host
 
 Para este procedimento, garanta que há o `ssh-keygen` esteja disponível no seu terminal, em distribuições baseadas no Ubuntu/Debian pode ser instalado com `sudo apt install -y openssh-client`. Em versões mais recentes do Windows já está disponível no terminal.
 
-O primeiro passo é gerar um par seguro de chaves na sua máquina pessoal, caso ainda não tenha:
+O primeiro passo é gerar um par seguro de chaves na sua máquina pessoal que irá fazer o acesso, caso ainda não tenha:
 
 ```bash
 ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519 -C "fulano@example.com"
@@ -30,7 +30,13 @@ ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519 -C "fulano@example.com"
 Então você deve copiar sua chave pública, se você já possuia uma chave do tipo RSA use o comando `cat ~/.ssh/id_rsa.pub`, se você gerou no passo anterior, apresente sua chave com:
 
 ```bash
-cat ~/.ssh/id_rsa.pub
+cat ~/.ssh/id_ed25519.pub
+```
+
+Acesse normalmente seu servidor SSH, e então *com o usuário alvo no destino*, edite o arquivo de chaves públicas autorizadas, e adicione sua chave pública que você copiou no final do arquivo:
+
+```bash
+nano ~/.ssh/authorized_keys
 ```
 
 ## Teste de Brute Force Attack
