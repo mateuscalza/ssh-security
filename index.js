@@ -10,6 +10,7 @@ const start = Date.now()
 const host = options.host || '127.0.0.1'
 const port = options.port || 22
 const username = options.username || 'root'
+const verbose = options.verbose || options.v
 
 const liner = new lineByLine('./data/10-million-password-list-top-1000000.txt');
 
@@ -33,7 +34,9 @@ async function main() {
         process.exit(0)
       } catch (error) {
         if (error.level !== 'client-authentication') {
-          console.error(error.message)
+          if (verbose) {
+            console.error(error.message)
+          }
           await check()
         }
         process.stdout.write('.')
