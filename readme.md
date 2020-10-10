@@ -39,6 +39,8 @@ Acesse normalmente seu servidor SSH, e então *com o usuário alvo no destino*, 
 nano ~/.ssh/authorized_keys
 ```
 
+Verifique o funcionamento, e desative o acesso por senha no arquivo de configuração `nano /etc/ssh/sshd_config`. Substituia `PasswordAuthentication yes` por `PasswordAuthentication no`. E reinicie o serviço de SSH `systemctl restart ssh*`.
+
 ## Teste de Brute Force Attack
 
 ```bash
@@ -48,7 +50,7 @@ ssh-brute-force user@host
 
 ## Como prevenir ataques
 
- - Configurar acesso segurou sem senha
+ - Configurar acesso seguro sem senha
  - Usar uma senha forte, gerada automaticamente
  - Bloquear acessos massivos com [Fail2ban](https://www.linode.com/docs/security/basics/using-fail2ban-to-secure-your-server-a-tutorial/)
  - Mudar a porta padrão
