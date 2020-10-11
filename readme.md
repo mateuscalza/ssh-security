@@ -40,7 +40,7 @@ scp usuario@host:/tmp/meuarquivo.txt meuarquivo.txt
 ssh fulano@200.100.50.25 -L 3307:localhost:3306
 ```
 
-Se for necessário, o caminho inverso pode ser feito com a flag `-R 3306:localhost:3307`
+Se for necessário, o caminho inverso pode ser feito com a flag `-R 3307:localhost:3306`
 
 ## Configurando acesso seguro sem senha
 
