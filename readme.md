@@ -12,7 +12,23 @@ Desenvolvido pelos acadêmicos:
 ## Acessando servidores
 
 ```bash
-ssh user@host
+ssh usuario@host
+```
+
+## Copiando arquivos com SCP
+
+Ao rodar `man scp` em sistemas Linux para a definição do comando, você pode obter a seguinte descrição:
+
+> scp copies files between hosts on a network. It uses ssh for data transfer, and uses the same authentication and provides the same security as ssh. scp will ask for passwords or passphrases if they are needed for authentication.
+
+Em outras palavras, usando a estrutura e segurança existente do SSH, possibilita tranferência de arquivos. Simples, como o comando nativo `cp`.
+
+```
+# Enviando arquivo por SCP/SSH
+scp meuarquivo.txt usuario@host:/tmp/meuarquivo.txt
+
+# Recebendo arquivo por SCP/SSH
+scp usuario@host:/tmp/meuarquivo.txt meuarquivo.txt
 ```
 
 ## Configurando acesso seguro sem senha
