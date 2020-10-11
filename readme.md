@@ -31,6 +31,17 @@ scp meuarquivo.txt usuario@host:/tmp/meuarquivo.txt
 scp usuario@host:/tmp/meuarquivo.txt meuarquivo.txt
 ```
 
+## Túnel de portas com SSH
+
+É normal você precisar acessar um banco de dados que só esteja disponível localmente no seu servidor. Muitas ferramentas de banco de dados possuem suporte à adicionar uma conexão por SSH, como o DataGrip e DBeaver. O SSH possui um recurso que permite trazer uma porta disponível no destino facilmente para a sua máquina. Uma forma simples de proceder é com a flag `-L`:
+
+```bash
+# ssh usuario@host -L portaLocal:hostNoDestino:portaNoDestino
+ssh fulano@200.100.50.25 -L 3307:localhost:3306
+```
+
+Se for necessário, o caminho inverso pode ser feito com a flag `-R 3306:localhost:3307`
+
 ## Configurando acesso seguro sem senha
 
 É possível fazer o acesso usando chaves assimétricas.
