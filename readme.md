@@ -21,7 +21,7 @@ Ao rodar `man scp` em sistemas Linux para a definição do comando, você pode o
 
 > scp copies files between hosts on a network. It uses ssh for data transfer, and uses the same authentication and provides the same security as ssh. scp will ask for passwords or passphrases if they are needed for authentication.
 
-Em outras palavras, usando a estrutura e segurança existente do SSH, possibilita tranferência de arquivos. Simples, como o comando nativo `cp`.
+Em outras palavras, usando a estrutura e segurança existente no SSH, o SCP possibilita tranferência de arquivos. Simples, como o comando nativo `cp`.
 
 ```bash
 # Enviando arquivo por SCP/SSH
