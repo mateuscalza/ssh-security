@@ -23,7 +23,7 @@ Ao rodar `man scp` em sistemas Linux para a definição do comando, você pode o
 
 Em outras palavras, usando a estrutura e segurança existente do SSH, possibilita tranferência de arquivos. Simples, como o comando nativo `cp`.
 
-```
+```bash
 # Enviando arquivo por SCP/SSH
 scp meuarquivo.txt usuario@host:/tmp/meuarquivo.txt
 
