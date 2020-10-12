@@ -109,7 +109,7 @@ ssh-brute-force user@host
 
 ## Camadas do SSH
 
-![SSH LAYERS](/images/server.png)
+![SSH LAYERS](/images/layers_ssh.png)
 
 Recursos do SSH
 Criptografia forte
