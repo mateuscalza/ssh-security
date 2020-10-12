@@ -91,43 +91,48 @@ ssh-brute-force user@host
  
 ## Um pouco da história SSH
 
--Tatu Ylonen em 1995
--Desenvolvido após um hacking na rede de uma universidade da Finlândia.
--Gerencia mais da metade dos servidores web mundiais.
+- Tatu Ylonen em 1995
+- Desenvolvido após um hacking na rede de uma universidade da Finlândia.
+- Gerencia mais da metade dos servidores web mundiais.
 
 ## Curiosidades do SSH
 
--Vem com toda a distribuição Linux, Mac OS X, AIX, Sun Solaris, OpenBSD.
--Criptografa os arquivos enviados ao diretório do servidor.
--Substituto para telnet, rlogin, ftp, rsh, rcp, rdist e programas baseados em r *.
+- Vem com toda a distribuição Linux, Mac OS X, AIX, Sun Solaris, OpenBSD.
+- Criptografa os arquivos enviados ao diretório do servidor.
+- Substituto para telnet, rlogin, ftp, rsh, rcp, rdist e programas baseados em r *.
 
 ## O que é SSH
 
-Protocolo de rede
-Garante uma comunicação remota dinâmica e segura entre cliente/servidor.
-Suporte a autenticação, encriptação e a integridade dos dados transmitidos.
-Camadas do SSH
+- Protocolo de rede
+- Garante uma comunicação remota dinâmica e segura entre cliente/servidor.
+- Suporte a autenticação, encriptação e a integridade dos dados transmitidos.
+
+## Camadas do SSH
+
+![SSH LAYERS](/images/server.png)
+
 Recursos do SSH
-➔ Criptografia forte
-➔ Autenticação forte
-➔ Autorização
-➔ Integridade de comunicação
-➔ Encaminhamento ou túnel
+Criptografia forte
+Autenticação forte
+Autorização
+Integridade de comunicação
+Encaminhamento ou túnel
 Funcionamento SSH
 Um handshake criptografado é feito com o servidor;
 A conexão cliente/servidor remoto é criptografada usando cifra simétrica;
 O cliente se autentica;
 O cliente agora pode interagir com segurança com o servidor
 
-Como Funciona o Comando SSH?
-● Um handshake criptografado é feito com o servidor;
-● A conexão cliente/servidor remoto é criptografada usando cifra simétrica;
-● O cliente se autentica;
-● O cliente agora pode interagir com segurança com o servidor;
-Criptografia usada pelo SSH
-● Criptografia Simétrica
-● Criptografia Assimétrica
-● Hashing
+## Como Funciona o Comando SSH?
+
+- Um handshake criptografado é feito com o servidor;
+- A conexão cliente/servidor remoto é criptografada usando cifra simétrica;
+- O cliente se autentica;
+- O cliente agora pode interagir com segurança com o servidor;
+- Criptografia usada pelo SSH
+- Criptografia Simétrica
+- Criptografia Assimétrica
+- Hashing
 Comando SSH
 ssh – indicação do uso do comando SSH.
 {user} – contra a qual você deseja se conectar remotamente.
