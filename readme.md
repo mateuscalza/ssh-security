@@ -125,6 +125,8 @@ ssh-brute-force user@host
 - O cliente se autentica;
 - O cliente agora pode interagir com segurança com o servidor
 
+![SSH OPERATION](/images/operation.png)
+
 ## Criptografia usada pelo SSH
 
 - Criptografia Simétrica
