@@ -88,3 +88,71 @@ ssh-brute-force user@host
 
  - Estes exemplos foram aplicados usando Ubuntu 20.04, ainda que estes devam funcionar em outras distribuições Linux
  - A ferramenta de testes de brute force attack é compatível com Windows, Linux e MacOS, desde que tenham NodeJS instalado
+ 
+## Um pouco da história SSH
+
+-Tatu Ylonen em 1995
+-Desenvolvido após um hacking na rede de uma universidade da Finlândia.
+-Gerencia mais da metade dos servidores web mundiais.
+
+## Curiosidades do SSH
+
+-Vem com toda a distribuição Linux, Mac OS X, AIX, Sun Solaris, OpenBSD.
+-Criptografa os arquivos enviados ao diretório do servidor.
+-Substituto para telnet, rlogin, ftp, rsh, rcp, rdist e programas baseados em r *.
+
+## O que é SSH
+
+Protocolo de rede
+Garante uma comunicação remota dinâmica e segura entre cliente/servidor.
+Suporte a autenticação, encriptação e a integridade dos dados transmitidos.
+Camadas do SSH
+Recursos do SSH
+➔ Criptografia forte
+➔ Autenticação forte
+➔ Autorização
+➔ Integridade de comunicação
+➔ Encaminhamento ou túnel
+Funcionamento SSH
+Um handshake criptografado é feito com o servidor;
+A conexão cliente/servidor remoto é criptografada usando cifra simétrica;
+O cliente se autentica;
+O cliente agora pode interagir com segurança com o servidor
+
+Como Funciona o Comando SSH?
+● Um handshake criptografado é feito com o servidor;
+● A conexão cliente/servidor remoto é criptografada usando cifra simétrica;
+● O cliente se autentica;
+● O cliente agora pode interagir com segurança com o servidor;
+Criptografia usada pelo SSH
+● Criptografia Simétrica
+● Criptografia Assimétrica
+● Hashing
+Comando SSH
+ssh – indicação do uso do comando SSH.
+{user} – contra a qual você deseja se conectar remotamente.
+{host} – é o computador que você quer acessar.
+SSH irá proteger contra
+Escuta de dados transmitidos pela rede;
+Manipulação de dados em elementos intermediários da rede;
+Falsificação de endereço IP;
+Falsificação de DNS de nomes de host/endereços de IP confiáveis;
+SSH não irá proteger contra
+Configuração ou uso incorreto;
+Uma conta root comprometida;
+Diretórios pessoais inseguros;
+Vantagens de usar SSH
+Tecnologia comprovada
+Criptografia forte
+Existem versões gratuitas e comerciais
+Funciona em várias plataformas
+O encapsulamento de portas funciona bem e pode ser usado para VPNs
+Muitos métodos de autenticação suportados
+Desvantagens de usar SSH
+Port ranges e dynamic ports não podem ser encaminhados
+Não é possível restringir quais portas podem ou não ser encaminhadas, por
+usuário
+Quando um usuário é autenticado por senha, a identidade RSA do cliente não
+é verificada
+O encaminhamento de portas também pode apresentar problemas de
+segurança.
