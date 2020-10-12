@@ -89,49 +89,44 @@ ssh-brute-force user@host
  - Estes exemplos foram aplicados usando Ubuntu 20.04, ainda que estes devam funcionar em outras distribuições Linux
  - A ferramenta de testes de brute force attack é compatível com Windows, Linux e MacOS, desde que tenham NodeJS instalado
  
-## Um pouco da história SSH
+## Um pouco da história 
 
 - Tatu Ylonen em 1995
 - Desenvolvido após um hacking na rede de uma universidade da Finlândia.
 - Gerencia mais da metade dos servidores web mundiais.
 
-## Curiosidades do SSH
+## Curiosidades do 
 
 - Vem com toda a distribuição Linux, Mac OS X, AIX, Sun Solaris, OpenBSD.
 - Criptografa os arquivos enviados ao diretório do servidor.
 - Substituto para telnet, rlogin, ftp, rsh, rcp, rdist e programas baseados em r *.
 
-## O que é SSH
+## O que é
 
 - Protocolo de rede
 - Garante uma comunicação remota dinâmica e segura entre cliente/servidor.
 - Suporte a autenticação, encriptação e a integridade dos dados transmitidos.
 
-## Camadas do SSH
+## Camadas
 
 ![SSH LAYERS](/images/layers_ssh.png)
 
-## Recursos do SSH
+## Recursos
 - Criptografia forte
 - Autenticação forte
 - Autorização
 - Integridade de comunicação
 - Encaminhamento ou túnel
 
-## Funcionamento SSH
+## Funcionamento
 
 - Um handshake criptografado é feito com o servidor;
 - A conexão cliente/servidor remoto é criptografada usando cifra simétrica;
 - O cliente se autentica;
 - O cliente agora pode interagir com segurança com o servidor
 
-## Como Funciona o Comando SSH
+### Criptografia usada pelo SSH
 
-- Um handshake criptografado é feito com o servidor;
-- A conexão cliente/servidor remoto é criptografada usando cifra simétrica;
-- O cliente se autentica;
-- O cliente agora pode interagir com segurança com o servidor;
-- Criptografia usada pelo SSH
 - Criptografia Simétrica
 - Criptografia Assimétrica
 - Hashing
@@ -148,7 +143,7 @@ ssh-brute-force user@host
 - Uma conta root comprometida;
 - Diretórios pessoais inseguros;
 
-## Vantagens de usar SSH
+## Vantagens
 
 - Tecnologia comprovada
 - Criptografia forte
@@ -157,7 +152,7 @@ ssh-brute-force user@host
 - O encapsulamento de portas funciona bem e pode ser usado para VPNs
 - Muitos métodos de autenticação suportados
 
-## Desvantagens de usar SSH
+## Desvantagens
 
 - Port ranges e dynamic ports não podem ser encaminhados
 - Não é possível restringir quais portas podem ou não ser encaminhadas, por usuário
