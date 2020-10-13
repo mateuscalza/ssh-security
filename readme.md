@@ -95,7 +95,7 @@ ssh-brute-force user@host
 - Desenvolvido após um hacking na rede de uma universidade da Finlândia.
 - Gerencia mais da metade dos servidores web mundiais.
 
-## Curiosidades do 
+## Curiosidades do SSH
 
 - Vem com toda a distribuição Linux, Mac OS X, AIX, Sun Solaris, OpenBSD.
 - Criptografa os arquivos enviados ao diretório do servidor.
@@ -106,6 +106,7 @@ ssh-brute-force user@host
 - Protocolo de rede
 - Garante uma comunicação remota dinâmica e segura entre cliente/servidor.
 - Suporte a autenticação, encriptação e a integridade dos dados transmitidos.
+- Comumente utilizado para acesso seguro sob redes inseguras.
 
 ## Camadas
 
@@ -134,7 +135,7 @@ ssh-brute-force user@host
 - Hashing
 
 
-## Proteção
+## SSH protege contra
 
 - Escuta de dados transmitidos pela rede;
 - Manipulação de dados em elementos intermediários da rede;
