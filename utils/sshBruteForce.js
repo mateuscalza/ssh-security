@@ -1,3 +1,4 @@
+const pTimeout = require('p-timeout')
 const bruteForce = require('./bruteForce')
 const delay = require('./delay')
 const ssh = require('./ssh')
@@ -9,19 +10,20 @@ async function sshBruteForce({
   verbose = false,
   onFailure = () => undefined,
   errorRetryDelay = 1000,
+  timeout = 1500,
   filter = () => true,
 }) {
   const operation = async password => {
     try {
-      await ssh({
+      await pTimeout(ssh({
         host,
         username,
         port,
         password,
-      })
+      }), timeout)
       return true
     } catch (error) {
-      if (error.level !== 'client-authentication') {
+      if (error.level !== 'client-authentication' && error.constructor !== pTimeout.TimeoutError) {
         if (verbose) {
           console.error(error.message)
         }

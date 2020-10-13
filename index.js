@@ -8,6 +8,7 @@ function verticallyScaledSSHBruteForceAttack({
   verbose = false,
   onFailure = () => undefined,
   errorRetryDelay = 1000,
+  timeout = 1500,
   forks,
 }) {
   return new Promise((resolve, reject) =>
@@ -22,6 +23,7 @@ function verticallyScaledSSHBruteForceAttack({
             username,
             verbose,
             errorRetryDelay,
+            timeout,
             onFailure: (currentPassword, passwordIndex) =>
               onFailure(currentPassword, passwordIndex, index),
             filter: (currentPassword, passwordIndex) => filter(passwordIndex),

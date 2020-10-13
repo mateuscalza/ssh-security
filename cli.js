@@ -10,6 +10,7 @@ const [, urlUser, urlHost] =
 
 const host = options.host || options.h || urlHost || '127.0.0.1'
 const port = options.port || options.p || 22
+const timeout = parseInt(options.timeout || options.t || 1500, 10)
 const username = options.username || options.u || urlUser || 'root'
 const verboseInput = options.verbose || options.v
 const verbose =
@@ -26,6 +27,7 @@ async function verticallyScaledSSHBruteForceAttackCli() {
       username,
       port,
       verbose,
+      timeout,
       onFailure: (currentPassword, passwordIndex, forkIndex) =>
         verbose
           ? console.log(

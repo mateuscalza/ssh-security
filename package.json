@@ -9,6 +9,7 @@
   "private": false,
   "scripts": {
     "start": "node cli.js",
+    "presentation": "marp readme.md -o readme.pdf",
     "dev": "nodemon cli.js --"
   },
   "bin": {
@@ -18,9 +19,11 @@
     "humanize-duration": "^3.24.0",
     "minimist": "^1.2.5",
     "n-readlines": "^1.0.0",
+    "p-timeout": "^3.2.0",
     "ssh2": "^0.8.9"
   },
   "devDependencies": {
+    "@marp-team/marp-cli": "^0.21.1",
     "nodemon": "^2.0.4",
     "prettier": "^2.1.2"
   }
