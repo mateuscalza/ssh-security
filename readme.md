@@ -134,7 +134,7 @@ ssh-brute-force user@host
 - Hashing
 
 
-## SSH protege contra
+## Proteção
 
 - Escuta de dados transmitidos pela rede;
 - Manipulação de dados em elementos intermediários da rede;
